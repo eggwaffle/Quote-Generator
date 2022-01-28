@@ -1,6 +1,6 @@
 import Head from 'next/head'
 //import { getAllPostIds, getPostData } from '../lib/posts'
-import Layout from '../components/layout'
+import Layout, { siteTitle } from '../../components/layout'
 import utilStyles from '../styles/utils.module.sass'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
@@ -17,7 +17,7 @@ export default function Post({
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title>{siteTitle}</title>
       </Head>
       <article>
         <h1>Author</h1>

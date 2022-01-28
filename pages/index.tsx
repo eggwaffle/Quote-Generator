@@ -14,8 +14,10 @@ const Home: NextPage = () => {
         <section>
         A quote
         </section>
-        <Link href="/">
-          <a>
+        <Link href="/quotes">
+          <a
+            onClick={() => console.log("more quotes")}
+          >
             <h1>Author</h1>
             <p>type</p>
           </a>

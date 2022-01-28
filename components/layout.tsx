@@ -41,8 +41,10 @@ export default function Layout({
               </a>
             </Link>
           </>
-        ) : (
+        ) : 404 ? (
           <>
+          </>
+        ) : (
             <Link href="/">
               <a
                 onClick={() => console.log("random!")}
@@ -50,12 +52,18 @@ export default function Layout({
                 random
               </a>
             </Link>
-          </>
         )}
       </header>
       <main>{children}</main>
-      <footer>
-        eggwaffle
+        <footer className='footer'>created by <b>
+          <a
+            href="https://github.com/eggwaffle"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            eggwaffle
+          </a>
+        </b> - devChallenges.io
       </footer>
     </div>
   )
