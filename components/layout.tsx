@@ -7,10 +7,10 @@ export const siteTitle = 'Random Quote Generator'
 
 export default function Layout({
   children,
-  home
+  notFound
  }: {
     children: React.ReactNode
-    home?: boolean
+    notFound?: boolean
  }) {
   return (
     <div className={styles.container}>
@@ -31,30 +31,25 @@ export default function Layout({
 
       </Head>
       <header className={styles.header}>
-        {home ? (
+        {notFound ? (
           <>
+          </>
+        ) :  (
             <Link href="/">
               <a
                 onClick={() => console.log("random!")}
               >
-                random
-              </a>
-            </Link>
-          </>
-        ) : 404 ? (
-          <>
-          </>
-        ) : (
-            <Link href="/">
-              <a
-                onClick={() => console.log("random!")}
-              >
-                random
+                <div className={utilStyles.renewButton}>
+                  random
+                  <span className="material-icons">
+                    autorenew
+                  </span>
+                </div>
               </a>
             </Link>
         )}
       </header>
-      <main>{children}</main>
+      <main className={styles.mainContainer}>{children}</main>
         <footer className='footer'>created by <b>
           <a
             href="https://github.com/eggwaffle"
