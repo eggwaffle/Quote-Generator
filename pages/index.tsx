@@ -6,7 +6,7 @@ import utilStyles from '../styles/utils.module.sass'
 
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -18,10 +18,8 @@ const Home: NextPage = () => {
           <a
             onClick={() => console.log("more quotes")}
           >
-            <div className={utilStyles.quoteAuthor}>
-              <h1>Author</h1>
-              <p>type</p>
-            </div>
+            <h1>Author</h1>
+            <p>type</p>
           </a>
         </Link>
       </main>

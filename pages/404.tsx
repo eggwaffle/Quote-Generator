@@ -8,7 +8,7 @@ import utilStyles from '../styles/utils.module.sass'
 
 const Custom404: NextPage = () => {
   return (
-    <Layout notFound>
+    <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
