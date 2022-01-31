@@ -7,10 +7,10 @@ export const siteTitle = 'Random Quote Generator'
 
 export default function Layout({
   children,
-  home
+  notFound,
  }: {
     children: React.ReactNode
-    home?: boolean
+    notFound?: boolean
  }) {
   return (
     <div className={styles.container}>
@@ -31,17 +31,7 @@ export default function Layout({
 
       </Head>
       <header className={styles.header}>
-        {home ? (
-          <>
-            <Link href="/">
-              <a
-                onClick={() => console.log("random!")}
-              >
-                random
-              </a>
-            </Link>
-          </>
-        ) : 404 ? (
+        {notFound ? (
           <>
           </>
         ) : (
@@ -49,6 +39,9 @@ export default function Layout({
               <a
                 onClick={() => console.log("random!")}
               >
+              <span className="material-icons">
+                autorenew
+              </span>
                 random
               </a>
             </Link>
