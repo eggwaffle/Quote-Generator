@@ -35,3 +35,9 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# local files
+.eslintrc.json
+next-env.d.ts
+tsconfig.json
+yarn.log
