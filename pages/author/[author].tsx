@@ -1,19 +1,34 @@
-import { GetServerSideProps, GetStaticProps, GetStaticPaths } from 'next'
+import { GetServerSideProps } from 'next'
+import { ParsedUrlQuery } from 'querystring';
 import Head from 'next/head'
 //import { getAllPostIds, getPostData } from '../lib/posts'
 import { getDataByAuthor } from '../api/quotes'
 import Layout, { siteTitle } from '../../components/layout'
 import utilStyles from '../styles/utils.module.sass'
 
+interface quoteProps {
+  quoteObject: [
+    item: {
+      _id: string
+      quoteText: string
+    }
+  ]
+  authorResult: string
+}
 
-export const getServerSideProps: GetServerSideProps = async (context: any) => {
+interface Params extends ParsedUrlQuery {
+  author: string
+}
+
+export const getServerSideProps: GetServerSideProps<quoteProps, Params> = async (context) => {
   // Use `context.params` to get dynamic params
-  const data = await getDataByAuthor(context.params.author as string)
+  const params = context.params!   // ! is a non-null assertion
+  const data = await getDataByAuthor(params.author)
 
   if (!data) {
     return {
       notFound: true,
-    }
+    } // will render 404 error page
   }
 
   return {
@@ -27,15 +42,7 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
 export default function Post( {
   quoteObject,
   authorResult
- }: {
-  quoteObject: [
-    item: {
-      _id: string
-      quoteText: string
-    }
-  ]
-  authorResult: string
-}) {
+ }: quoteProps) {
   // Render the page
   return (
     <Layout>
