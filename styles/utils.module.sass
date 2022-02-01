@@ -1,5 +1,21 @@
 .notFound
-  @apply flex
+  @apply h-4/5 mt-20 flex justify-center items-center
 
-.footer
-  @apply absolute bottom-0 w-full py-6 bg-white font-montserrat text-sm text-center text-A9A9A9 hover:border-t hover:text-2F80ED
+.centerContainer
+  @apply h-[80vh] flex flex-col justify-center
+  a
+    @apply flex justify-between items-center px-5 py-7 text-black hover:bg-black hover:text-white
+    div
+      @apply my-0
+    h2
+      @apply my-2 text-lg
+    p
+      @apply m-0 text-xs text-828282
+
+.quoteContainer
+  @apply flex my-16 before:content-[''] before:w-2  before:bg-F7DF94 before:rounded-lg
+  div
+    @apply w-full ml-20 text-4xl
+
+.utilStyles.quoteDecor
+  @apply w-[2rem] bg-F7DF94 rounded-lg

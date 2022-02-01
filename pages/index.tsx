@@ -21,9 +21,9 @@ const Home = ({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <main>
-        <section>
-        <div>{quoteText}</div>
+      <main className={utilStyles.centerContainer}>
+        <section className={utilStyles.quoteContainer}>
+          <div>{`"${quoteText}"`}</div>
         </section>
         <Link href={`/author/${quoteAuthor}`}>
           <a
@@ -31,8 +31,13 @@ const Home = ({
               console.log(quoteAuthor)
             }}
           >
-            <h2>{quoteAuthor}</h2>
-            <p>{quoteGenre}</p>
+            <div>
+              <h2>{quoteAuthor}</h2>
+              <p>{quoteGenre}</p>
+            </div>
+            <span className="material-icons">
+              arrow_right_alt
+            </span>
           </a>
         </Link>
       </main>
