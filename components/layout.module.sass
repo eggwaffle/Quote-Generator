@@ -1,14 +1,14 @@
 .container
-  max-width: 36rem
-  padding: 0 1rem
-  margin: 3rem auto 6rem
-
+  @apply w-4/5 h-[80vh] mx-auto
 
 .header
-  display: flex
-  flex-direction: column
-  align-items: center
+  @apply my-2 flex justify-end items-center
+  a
+    @apply flex items-center text-black hover:text-A9A9A9
 
+.main
 
-.backToHome
-  margin: 3rem 0 0
+.footer
+  @apply fixed bottom-0 w-4/5 py-6 bg-white font-montserrat text-center text-sm text-A9A9A9
+  a
+    @apply text-A9A9A9 hover:text-black

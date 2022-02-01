@@ -39,16 +39,16 @@ export default function Layout({
               <a
                 onClick={() => console.log("random!")}
               >
+              random
               <span className="material-icons">
                 autorenew
               </span>
-                random
               </a>
             </Link>
         )}
       </header>
-      <main>{children}</main>
-        <footer className='footer'>created by <b>
+      <main className={styles.main}>{children}</main>
+        <footer className={styles.footer}>created by <b>
           <a
             href="https://github.com/eggwaffle"
             target="_blank"
