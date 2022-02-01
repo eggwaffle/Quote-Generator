@@ -15,7 +15,7 @@ export default function Layout({
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/devchallenges.png" />
+        <link rel="icon" href="/images/devchallenges.png" />
         <meta
           name="description"
           content=" a quote generator app"
