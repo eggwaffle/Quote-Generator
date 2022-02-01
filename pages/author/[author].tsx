@@ -4,7 +4,7 @@ import Head from 'next/head'
 //import { getAllPostIds, getPostData } from '../lib/posts'
 import { getDataByAuthor } from '../api/quotes'
 import Layout, { siteTitle } from '../../components/layout'
-import utilStyles from '../styles/utils.module.sass'
+import utilStyles from '../../styles/utils.module.sass'
 
 interface quoteProps {
   quoteObject: [
@@ -54,7 +54,12 @@ export default function Post( {
         <main>
           {quoteObject.map((item) => {
             return (
-              <p key={item._id}>{item.quoteText}</p>
+              <section
+                key={item._id}
+                className={utilStyles.quoteContainer}
+              >
+                <div>{`"${item.quoteText}"`}</div>
+              </section>
             )
             })}
         </main>

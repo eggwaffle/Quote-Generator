@@ -48,7 +48,9 @@ export default function Layout({
         )}
       </header>
       <main className={styles.main}>{children}</main>
-        <footer className={styles.footer}>created by <b>
+        <footer className={styles.footer}>
+        <div>
+        created by <b>
           <a
             href="https://github.com/eggwaffle"
             target="_blank"
@@ -57,6 +59,7 @@ export default function Layout({
             eggwaffle
           </a>
         </b> - devChallenges.io
+        </div>
       </footer>
     </div>
   )
