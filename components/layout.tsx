@@ -13,7 +13,7 @@ export default function Layout({
     notFound?: boolean
  }) {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <link rel="icon" href="/images/devchallenges.png" />
         <meta
@@ -30,11 +30,18 @@ export default function Layout({
         <meta name="twitter:card" content="summary_large_image" />
 
       </Head>
-      <header className={styles.header}>
-        {notFound ? (
-          <>
-          </>
-        ) : (
+      <div className={styles.Badge}>
+        <a href="https://war.ukraine.ua" title="Stand with Ukraine">
+          <div className={styles.TopBadge}>{" "}</div>
+          <div className={styles.BottomBadge}>{" "}</div>
+        </a>
+      </div>
+      <div className={styles.container}>
+        <header className={styles.header}>
+          {notFound ? (
+            <>
+            </>
+          ) : (
             <Link href="/">
               <a
                 onClick={() => console.log("random!")}
@@ -45,22 +52,23 @@ export default function Layout({
               </span>
               </a>
             </Link>
-        )}
-      </header>
-      <main className={styles.main}>{children}</main>
-        <footer className={styles.footer}>
-        <div>
-        created by <b>
-          <a
-            href="https://github.com/eggwaffle"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            eggwaffle
-          </a>
-        </b> - devChallenges.io
-        </div>
-      </footer>
-    </div>
+          )}
+        </header>
+        <main className={styles.main}>{children}</main>
+          <footer className={styles.footer}>
+          <div>
+          created by <b>
+            <a
+              href="https://github.com/eggwaffle"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              eggwaffle
+            </a>
+          </b> - devChallenges.io
+          </div>
+        </footer>
+      </div>
+    </>
   )
 }
